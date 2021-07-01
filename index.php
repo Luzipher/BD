@@ -38,24 +38,40 @@ $cs = $con -> query("SELECT * FROM nombresBlackDragons");
                             <th>
                                 Apellido Materno
                             </th>
+                            <th>
+                                Matricula
+                            </th>
+                            <th>
+                               Imagen
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         while ($resul = $cs -> fetchArray()){
                             $nombre = $resul['nombre'];
+                            $aPaterno = $resul['aPaterno'];
+                            $aMaterno = $resul['aMaterno'];
+                            $matricula = $resul['matricula'];
                             echo '
                             <tr>
-                            <td>
+                            <td class="align-middle">
                                 '.$nombre.'
                             </td>
-                            <td>
-                                //
+                            <td class="align-middle">
+                                '.$aPaterno.'
                             </td>
-                            <td>
-                                //
+                            <td class="align-middle">
+                                '.$aMaterno.'
                             </td>
-                             </tr>
+                            <td class="align-middle">
+                                '.$matricula.'
+                            </td>
+                            <td class="align-middle">
+                             <img class ="rounded" src="img/'.$matricula.'.jpg" style="width:100px;">
+                            </td>
+
+                            </tr>
                             
                             ';
                            }
